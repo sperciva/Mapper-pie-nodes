@@ -9,7 +9,7 @@ Step 2: Download the two .py files and replace the ones installed on your system
 
         Home/Anaconda3/envs/myenvironment/lib/python3.8/site-packages/kmapper
 
-Step 3: Download the rest of the files and put them in the same directory.
+Step 3: Download the rest of the files (except for the readme) and put them in the same directory.
 
 Step 4: Run the Jupyter notebook.
 
