@@ -11,14 +11,14 @@ Step 2: Download the two .py files and replace the ones installed on your system
 
 Step 3: Download the rest of the files and put them in the same directory.
 
-Step 1: Run the Jupyter notebook.
+Step 4: Run the Jupyter notebook.
 
-Step 2: Type 
+Step 5: Type 
 
     python3 -m http.server 
     
 into a terminal window to start a local server.
 
-Step 3: Go to the URL in the temrinal output (something like http://0.0.0.0:8000/).
+Step 6: Go to the URL in the temrinal output (something like http://0.0.0.0:8000/).
 
-Step 4: Navigate to the folder containing the index.html file.
+Step 7: Navigate to the folder containing the index.html file.
