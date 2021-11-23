@@ -27,6 +27,7 @@ body {
 
 // https://bl.ocks.org/puzzler10/4438752bb93f45dc5ad5214efaa12e4a
 // https://gist.github.com/kgeorgiou/68f864364f277720252d0329408433ae
+// https://bl.ocks.org/mbostock/3355967
     
     var svg = d3.select("body").append("svg");
         width = +svg.attr("width"),
@@ -34,13 +35,19 @@ body {
         
 
     var color = d3.scaleOrdinal(d3.schemeCategory10);
+    
+     const forceX = d3.forceX(width / 4).strength(0.05)
+const forceY = d3.forceY(height / 4).strength(0.05)
 
     var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function (d) {
                 return d.id;
             }))
-            .force("charge", d3.forceManyBody().strength(-500))
+            .force('x', forceX)
+  .force('y',  forceY)
+            .force("charge", d3.forceManyBody().strength(-1200))
             .force("center", d3.forceCenter(width / 2, height / 2));
+            
             
      //add tick instructions: 
     simulation.on("tick", tickActions );
@@ -94,6 +101,8 @@ var drag_handler = d3.drag()
 	.on("end", dragended);	
 	
 drag_handler(node);    
+
+
 
     //add zoom capabilities 
     var zoom_handler = d3.zoom()
