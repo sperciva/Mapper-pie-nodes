@@ -1,3 +1,5 @@
+// credit to https://gist.github.com/kgeorgiou/68f864364f277720252d0329408433ae
+
 var DEFAULT_OPTIONS = {
     radius: 10,
     outerStrokeWidth: 10,
