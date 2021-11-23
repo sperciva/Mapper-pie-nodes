@@ -1,7 +1,13 @@
 # Mapper-pie-nodes
 Implementation of Mapper with pie chart nodes
 
-Step 0: Download all of the files and put them in the same directory.
+Step 0: Install KeplerMapper with
+
+        pip install kmapper
+        
+Step 1:
+
+Step 2: Download all of the files and put them in the same directory.
 
 Step 1: Run the Jupyter notebook
 
