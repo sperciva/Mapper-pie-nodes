@@ -43,6 +43,7 @@ body {
 // https://bl.ocks.org/mbostock/3355967
 // https://codepen.io/renx777/pen/BmBvzL
 // https://bl.ocks.org/almsuarez/4333a12d2531d6c1f6f22b74f2c57102
+// https://stackoverflow.com/questions/20052964/d3-how-to-add-image-to-the-label-of-a-graph-node
 
     
     var svg = d3.select("body").append("svg");
@@ -78,6 +79,19 @@ body {
     //add encompassing group for the zoom 
     var g = svg.append("g")
         .attr("class", "everything");
+        
+    var tooltip = d3.select("body")
+	.append("div")
+	.style("position", "absolute")
+	.style("z-index", "10")
+	.style("width", "120px")
+	.style("height", "120px")
+	.style("padding", "2px")
+	.style("font", "12px sans-serif")
+	.style("border", "0px")
+	.style("border-radius", "8px")
+	.style("background", "lightsteelblue")
+	.style("visibility", "hidden");
 
 
     d3.json("data.json", function (error, graph) {
@@ -89,7 +103,7 @@ body {
                 .data(graph.links)
                 .enter().append("line")
                 .attr("stroke-width", function (d) {
-                    return d.value;
+                    return Math.sqrt(d.value);
                 });
 
         var node = g.append("g")
@@ -98,9 +112,24 @@ body {
                 .data(graph.nodes)
                 .enter()
                 .append("g")
-                node.append("title").text(function(d) {
-  return d.id
-})
+                .on("mouseover", function(d) {
+    tooltip.text(d.id);
+    tooltip.append("img")
+      .attr("src", "node_avg_outline/" + d.id + ".png")
+      .attr("x", -8)
+      .attr("y", -8)
+      .attr("width", "112px")
+      .attr("height", "112px");
+    tooltip.style("visibility", "visible");
+  })
+  .on("mousemove", function() {
+    return tooltip.style("top", (event.pageY -
+      10) + "px").style("left", (event.pageX + 10) + "px");
+  })
+  .on("mouseout", function() {
+    return tooltip.style("visibility", "hidden");
+  });
+
 
 
         /* Draw the respective pie chart for each node */
@@ -109,7 +138,7 @@ body {
                 parentNodeColor: color(d.group),
                 outerStrokeWidth: Math.sqrt(d.node_size),
                 showLabelText: false,
-                radius: d.node_size,             
+                radius: Math.sqrt(d.node_size),             
                 labelText: d.id,
                 labelColor: color(d.group)
             });
