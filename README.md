@@ -9,7 +9,7 @@ Step 2: Download the two .py files and replace the ones installed on your system
 
         Home/Anaconda3/envs/myenvironment/lib/python3.8/site-packages/kmapper
         
-Step 3: Download the jupyter notebook and put it in a directory.
+Step 3: Download the jupyter notebook and the procrustes.py file and put them in the same folder.
 
 Step 4: Inside of your directory, create a folder called "passiflora_pie_graph".
 
