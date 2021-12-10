@@ -25,7 +25,7 @@ Step 8: Type
     
 into a terminal window to start a local server.
 
-Step 9: Go to the URL in the temrinal output (something like http://0.0.0.0:8000/).
+Step 9: Go to the URL in the terminal output (something like http://0.0.0.0:8000/).
 
 Step 10: Navigate to the folder containing the index.html file.
 
