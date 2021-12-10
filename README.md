@@ -1,7 +1,7 @@
 # Mapper-pie-nodes
 Implementation of Mapper with pie chart nodes. We use KeplerMapper in Python to generate the graph structure then use d3 in Javascript to produce the graph visualization. This repository uses data on Passiflora leaves from the paper [Morphometric analysis of Passiflora leaves: the relationship between landmarks of the vasculature and elliptical Fourier descriptors of the blade](https://academic.oup.com/gigascience/article/6/1/giw008/2865207?login=true#supplementary-data)
 
-Step 0: Install KeplerMapper with
+Step 1: Install KeplerMapper with
 
         pip install kmapper
         
